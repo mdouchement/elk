@@ -18,8 +18,8 @@ logstash:
   image: logstash
   command: logstash -f /etc/logstash/conf.d/logstash.conf
   ports:
-    - "25826:25826"
-    - "25826:25826/udp"
+    - "5140:5140"
+    - "5140:5140/udp"
   links:
     - elasticsearch:eshost
   volumes:
