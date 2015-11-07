@@ -4,6 +4,7 @@ elasticsearch:
   ports:
     - "9200:9200"
     - "9300:9300"
+  restart: always
 
 kibana:
   image: kibana
@@ -13,6 +14,7 @@ kibana:
     - elasticsearch:eshost
   environment:
     ELASTICSEARCH_URL: http://eshost:9200
+  restart: always
 
 logstash:
   image: logstash
@@ -24,3 +26,5 @@ logstash:
     - elasticsearch:eshost
   volumes:
     - ~/elk/logstash/conf:/etc/logstash/conf.d
+  restart: always
+
