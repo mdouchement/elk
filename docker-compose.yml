@@ -22,9 +22,11 @@ logstash:
   ports:
     - "5140:5140"
     - "5140:5140/udp"
+    - "5141:5141"
+    - "5141:5141/udp"
   links:
     - elasticsearch:eshost
   volumes:
     - ~/elk/logstash/conf:/etc/logstash/conf.d
+    - ~/elk/logstash/patterns/pfsense2-2.grok:/opt/logstash/patterns/pfsense2-2.grok
   restart: always
-
